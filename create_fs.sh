@@ -1,10 +1,17 @@
 #!/bin/bash
 
+
+# Add size and mount point for your file systems and it will mount persistently
 FILESYSTEM=("5G,/var/cache/pulp/")
+# Name Volume Group to create
 VG=mainvg
+# Name File system type
 FSTYPE=xfs
+# Name Partition to use
 DEV=/dev/vdb1
 COUNT=0
+
+
 
 pvcreate ${DEV}
 vgcreate ${VG} ${DEV}
